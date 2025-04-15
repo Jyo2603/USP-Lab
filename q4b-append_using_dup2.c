@@ -7,8 +7,8 @@ int main() {
     char buf[50];
     int n = read(fd, buf, 50);
     lseek(fd, 0, SEEK_END);
-    dup2(fd, STDOUT_FILENO);
-    write(STDOUT_FILENO, buf, n);
+    write(fd, buf, n); 
+    write(STDOUT_FILENO, buf, n); 
     close(fd);
     return 0;
 }
