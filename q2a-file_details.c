@@ -10,3 +10,4 @@ int main() {
     printf("Links: %hu\n", s.st_nlink);
     printf("UID: %d\n", s.st_uid);
     printf("Modified: %s", ctime(&s.st_mtime));
+}
