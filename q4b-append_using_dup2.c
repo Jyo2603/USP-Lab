@@ -8,7 +8,10 @@ int main() {
     int n = read(fd, buf, 50);
     lseek(fd, 0, SEEK_END);
     write(fd, buf, n); 
-    write(STDOUT_FILENO, buf, n); 
+
+    dup2(fd, STDOUT_FILENO);     // Now printf or write to STDOUT goes to file.txt
+    write(STDOUT_FILENO, buf, n);
+
     close(fd);
     return 0;
 }
